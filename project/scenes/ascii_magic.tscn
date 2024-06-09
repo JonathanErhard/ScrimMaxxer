@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://shader/ascii_shader.gdshader" id="1_qhick"]
 [ext_resource type="Texture2D" uid="uid://kets73exrrib" path="res://shader/ascii.png" id="2_thbtb"]
-[ext_resource type="PackedScene" uid="uid://dduwj6br8i34j" path="res://assets/brig_ow/brigitte_-_overwatch_-_3d_printable_model.glb" id="3_6n057"]
+[ext_resource type="PackedScene" uid="uid://deqqr4iwf3wj3" path="res://assets/brig_ow/brig_centered.glb" id="3_exwyb"]
 [ext_resource type="Script" path="res://scripts/rotate.gd" id="4_axrl1"]
 
 [sub_resource type="Environment" id="Environment_10xax"]
@@ -43,6 +43,6 @@ grow_vertical = 2
 shortcut_context = NodePath("../../camera")
 color = Color(0, 0, 0, 1)
 
-[node name="brigitte_-_overwatch_-_3d_printable_model" parent="." instance=ExtResource("3_6n057")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -1.02228, -0.895325, -0.352661)
+[node name="brig_centered" parent="." instance=ExtResource("3_exwyb")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 script = ExtResource("4_axrl1")
