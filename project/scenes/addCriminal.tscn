@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm2nu40bors3h"]
+[gd_scene load_steps=4 format=3 uid="uid://dm2nu40bors3h"]
 
 [ext_resource type="Script" path="res://scripts/CondemnSubjects.gd" id="1_22sr4"]
+[ext_resource type="StyleBox" uid="uid://iahvn8b4but2" path="res://assets/Button.tres" id="1_j87u3"]
 [ext_resource type="Script" path="res://scripts/backToMain.gd" id="2_0weqx"]
 
 [node name="Node2D" type="Node2D"]
@@ -10,6 +11,8 @@ offset_left = 303.0
 offset_top = 92.0
 offset_right = 882.0
 offset_bottom = 351.0
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_styles/normal = ExtResource("1_j87u3")
 script = ExtResource("1_22sr4")
 
 [node name="Button" type="Button" parent="."]
@@ -17,6 +20,8 @@ offset_left = 303.0
 offset_top = 427.0
 offset_right = 547.0
 offset_bottom = 528.0
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_styles/normal = ExtResource("1_j87u3")
 text = "Condemn Subjects"
 
 [node name="Button2" type="Button" parent="."]
@@ -24,6 +29,8 @@ offset_left = 610.0
 offset_top = 426.0
 offset_right = 871.0
 offset_bottom = 530.0
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_styles/normal = ExtResource("1_j87u3")
 text = "pls go back"
 script = ExtResource("2_0weqx")
 

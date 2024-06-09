@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://doka2cmgv0hrl"]
+[gd_scene load_steps=4 format=3 uid="uid://doka2cmgv0hrl"]
 
 [ext_resource type="Script" path="res://scripts/ValidateText.gd" id="1_n4eol"]
+[ext_resource type="StyleBox" uid="uid://iahvn8b4but2" path="res://assets/Button.tres" id="1_slupi"]
 [ext_resource type="Script" path="res://scripts/backToMain.gd" id="2_71dmo"]
 
 [node name="Node2D" type="Node2D"]
@@ -10,6 +11,8 @@ offset_left = 177.0
 offset_top = 32.0
 offset_right = 964.0
 offset_bottom = 371.0
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_styles/normal = ExtResource("1_slupi")
 script = ExtResource("1_n4eol")
 
 [node name="ButtonMainMenu" type="Button" parent="."]
@@ -17,6 +20,8 @@ offset_left = 615.0
 offset_top = 439.0
 offset_right = 885.0
 offset_bottom = 550.0
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_styles/normal = ExtResource("1_slupi")
 text = "pls go back"
 script = ExtResource("2_71dmo")
 
@@ -25,6 +30,8 @@ offset_left = 267.0
 offset_top = 442.0
 offset_right = 510.0
 offset_bottom = 562.0
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_styles/normal = ExtResource("1_slupi")
 text = "Perform Background Check"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

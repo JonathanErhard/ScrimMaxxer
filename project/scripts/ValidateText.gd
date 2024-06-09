@@ -25,10 +25,10 @@ func _ready():
 	switch = false
 	t = 0
 		
-func _parse_text(text:String):
+func _parse_text(discord_text:String):
 	regex = RegEx.new()
 	regex.compile("[^[\\s:,;()-]+#[0-9]*")
-	var enemies_matches =  regex.search_all(text)
+	var enemies_matches =  regex.search_all(discord_text)
 	var enemies = []
 	for enemie_match in enemies_matches:
 		enemies.append(enemie_match.strings[0])
