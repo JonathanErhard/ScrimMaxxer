@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm2nu40bors3h"]
+
+[ext_resource type="Script" path="res://scripts/CondemnSubjects.gd" id="1_22sr4"]
+[ext_resource type="Script" path="res://scripts/backToMain.gd" id="2_0weqx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 303.0
+offset_top = 92.0
+offset_right = 882.0
+offset_bottom = 351.0
+script = ExtResource("1_22sr4")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 303.0
+offset_top = 427.0
+offset_right = 547.0
+offset_bottom = 528.0
+text = "Condemn Subjects"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 610.0
+offset_top = 426.0
+offset_right = 871.0
+offset_bottom = 530.0
+text = "pls go back"
+script = ExtResource("2_0weqx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[connection signal="pressed" from="Button" to="TextEdit" method="_condemnSubjects"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

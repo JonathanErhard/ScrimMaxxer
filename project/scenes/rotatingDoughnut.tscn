@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc021jffn467n"]
+
+[ext_resource type="FontFile" uid="uid://bfh00lm8ynfs1" path="res://assets/lucon.ttf" id="1_7tq5w"]
+[ext_resource type="Script" path="res://scripts/rotatingDoughnut.gd" id="2_p74p1"]
+
+[sub_resource type="FontVariation" id="FontVariation_1c3ni"]
+base_font = ExtResource("1_7tq5w")
+
+[node name="rotatingDoughnut" type="Node2D"]
+
+[node name="ASCIIdoughnut" type="Label" parent="."]
+offset_right = 1150.0
+offset_bottom = 649.0
+theme_override_fonts/font = SubResource("FontVariation_1c3ni")
+script = ExtResource("2_p74p1")

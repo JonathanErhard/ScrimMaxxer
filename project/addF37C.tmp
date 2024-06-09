@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm2nu40bors3h"]
+
+[ext_resource type="Script" path="res://rotatingDoughnut.gd" id="1_wgrk5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 324.0
+offset_top = 95.0
+offset_right = 812.0
+offset_bottom = 518.0
+script = ExtResource("1_wgrk5")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

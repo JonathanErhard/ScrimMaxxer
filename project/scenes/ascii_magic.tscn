@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd1a03hkejc3g"]
+
+[ext_resource type="Shader" path="res://shader/ascii_shader.gdshader" id="1_qhick"]
+[ext_resource type="Texture2D" uid="uid://kets73exrrib" path="res://shader/ascii.png" id="2_thbtb"]
+[ext_resource type="PackedScene" uid="uid://dduwj6br8i34j" path="res://assets/brig_ow/brigitte_-_overwatch_-_3d_printable_model.glb" id="3_6n057"]
+[ext_resource type="Script" path="res://scripts/rotate.gd" id="4_axrl1"]
+
+[sub_resource type="Environment" id="Environment_10xax"]
+background_mode = 3
+background_canvas_max_layer = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqxr6"]
+shader = ExtResource("1_qhick")
+shader_parameter/ascii_size = Vector2(8, 16)
+shader_parameter/available_columns = 10
+shader_parameter/max_columns = 16
+shader_parameter/ascii_tex = ExtResource("2_thbtb")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.37622)
+environment = SubResource("Environment_10xax")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.351482, 0.474465, 0.807059, 0, 0.862063, -0.506801, -0.936195, 0.178132, 0.303, 1.38849, -0.809998, -0.0306396)
+light_energy = 0.7
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.47241, 0.501202, -0.725001, 0.0452113, 0.807712, 0.587841, 0.880219, -0.31048, 0.358911, -2.7381, 1.64111, 1.87061)
+light_energy = 0.2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
+material = SubResource("ShaderMaterial_bqxr6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_context = NodePath("../../camera")
+color = Color(0, 0, 0, 1)
+
+[node name="brigitte_-_overwatch_-_3d_printable_model" parent="." instance=ExtResource("3_6n057")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -1.02228, -0.895325, -0.352661)
+script = ExtResource("4_axrl1")

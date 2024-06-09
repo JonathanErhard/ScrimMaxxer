@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://doka2cmgv0hrl"]
+
+[ext_resource type="Script" path="res://scripts/ValidateText.gd" id="1_n4eol"]
+[ext_resource type="Script" path="res://scripts/backToMain.gd" id="2_71dmo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextInput" type="TextEdit" parent="."]
+offset_left = 177.0
+offset_top = 32.0
+offset_right = 964.0
+offset_bottom = 371.0
+script = ExtResource("1_n4eol")
+
+[node name="ButtonMainMenu" type="Button" parent="."]
+offset_left = 615.0
+offset_top = 439.0
+offset_right = 885.0
+offset_bottom = 550.0
+text = "pls go back"
+script = ExtResource("2_71dmo")
+
+[node name="ButtonBackrgoundCheck" type="Button" parent="."]
+offset_left = 267.0
+offset_top = 442.0
+offset_right = 510.0
+offset_bottom = 562.0
+text = "Perform Background Check"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.223529, 0.223529, 0.223529, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ButtonMainMenu" to="ButtonMainMenu" method="_on_pressed"]
+[connection signal="pressed" from="ButtonBackrgoundCheck" to="TextInput" method="_validate"]
