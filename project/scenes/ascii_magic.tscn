@@ -42,6 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 shortcut_context = NodePath("../../camera")
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="brig_centered" parent="." instance=ExtResource("3_exwyb")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)

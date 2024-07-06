@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://doka2cmgv0hrl"]
+[gd_scene load_steps=5 format=3 uid="uid://doka2cmgv0hrl"]
 
 [ext_resource type="Script" path="res://scripts/ValidateText.gd" id="1_n4eol"]
 [ext_resource type="StyleBox" uid="uid://iahvn8b4but2" path="res://assets/Button.tres" id="1_slupi"]
 [ext_resource type="Script" path="res://scripts/backToMain.gd" id="2_71dmo"]
+[ext_resource type="Script" path="res://scripts/screen_saver.gd" id="4_mc0ur"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -45,6 +46,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.223529, 0.223529, 0.223529, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="screen_saver" type="Node" parent="."]
+script = ExtResource("4_mc0ur")
 
 [connection signal="pressed" from="ButtonMainMenu" to="ButtonMainMenu" method="_on_pressed"]
 [connection signal="pressed" from="ButtonBackrgoundCheck" to="TextInput" method="_validate"]

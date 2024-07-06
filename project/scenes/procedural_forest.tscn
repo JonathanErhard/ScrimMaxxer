@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://ygqh2aw0bhkc"]
+
+[ext_resource type="Script" path="res://scripts/move_camera.gd" id="1_8scol"]
+[ext_resource type="PackedScene" uid="uid://deqqr4iwf3wj3" path="res://assets/brig_ow/brig_centered.glb" id="2_k003i"]
+[ext_resource type="Script" path="res://assets/brig_ow/brig_movement.gd" id="3_6kcep"]
+[ext_resource type="Shader" path="res://shader/ascii_shader.gdshader" id="3_c1vga"]
+[ext_resource type="Texture2D" uid="uid://kets73exrrib" path="res://shader/ascii.png" id="4_bffge"]
+[ext_resource type="Script" path="res://scripts/generate_forest.gd" id="5_rjcma"]
+[ext_resource type="Script" path="res://scripts/motion_detection.gd" id="7_nlmuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g63d2"]
+albedo_color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hejhr"]
+shader = ExtResource("3_c1vga")
+shader_parameter/ascii_size = Vector2(4, 8)
+shader_parameter/available_columns = 10
+shader_parameter/max_columns = 16
+shader_parameter/ascii_tex = ExtResource("4_bffge")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.66, 0)
+script = ExtResource("1_8scol")
+
+[node name="brig" parent="Camera3D" instance=ExtResource("2_k003i")]
+transform = Transform3D(-0.00169239, 0, 0.00106575, 0, 0.002, 0, -0.00106575, 0, -0.00169239, 0, -0.375, -0.725)
+script = ExtResource("3_6kcep")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(0.708675, -0.189901, 0.679498, -0.193699, 0.873721, 0.446197, -0.678425, -0.447827, 0.582401, 0, 26.864, 30.748)
+light_energy = 1.439
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_overlay = SubResource("StandardMaterial3D_g63d2")
+size = Vector3(10000, 0.01, 10000)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_hejhr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="forest_generator" type="Node" parent="."]
+script = ExtResource("5_rjcma")
+
+[node name="motion_detection" type="Node" parent="."]
+script = ExtResource("7_nlmuq")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm2nu40bors3h"]
+[gd_scene load_steps=5 format=3 uid="uid://dm2nu40bors3h"]
 
 [ext_resource type="Script" path="res://scripts/CondemnSubjects.gd" id="1_22sr4"]
 [ext_resource type="StyleBox" uid="uid://iahvn8b4but2" path="res://assets/Button.tres" id="1_j87u3"]
 [ext_resource type="Script" path="res://scripts/backToMain.gd" id="2_0weqx"]
+[ext_resource type="Script" path="res://scripts/screen_saver.gd" id="4_k6vyf"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,6 +45,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[node name="screen_saver" type="Node" parent="."]
+script = ExtResource("4_k6vyf")
 
 [connection signal="pressed" from="Button" to="TextEdit" method="_condemnSubjects"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

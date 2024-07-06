@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd7ruovwphdw"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="StyleBox" uid="uid://iahvn8b4but2" path="res://assets/Button.tres" id="1_7p53g"]
-[ext_resource type="Script" path="res://scripts/ChangeToAddCriminal.gd" id="1_ytc1j"]
-[ext_resource type="Script" path="res://scripts/ChangeToBackgroundCheck.gd" id="2_r2hfy"]
-[ext_resource type="Script" path="res://scripts/screen_saver.gd" id="4_afn62"]
+[ext_resource type="StyleBox" path="res://assets/Button.tres" id="1_4qyqf"]
+[ext_resource type="Script" path="res://scripts/ChangeToAddCriminal.gd" id="2_yx2u6"]
+[ext_resource type="Script" path="res://scripts/ChangeToBackgroundCheck.gd" id="3_gc02w"]
+[ext_resource type="Script" path="res://scripts/screen_saver.gd" id="4_yr605"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,9 +13,9 @@ offset_top = 317.0
 offset_right = 771.0
 offset_bottom = 493.0
 theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
-theme_override_styles/normal = ExtResource("1_7p53g")
+theme_override_styles/normal = ExtResource("1_4qyqf")
 text = "add Criminals"
-script = ExtResource("1_ytc1j")
+script = ExtResource("2_yx2u6")
 
 [node name="backGroundCheckButton" type="Button" parent="."]
 offset_left = 296.0
@@ -23,9 +23,9 @@ offset_top = 95.0
 offset_right = 768.0
 offset_bottom = 240.0
 theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
-theme_override_styles/normal = ExtResource("1_7p53g")
+theme_override_styles/normal = ExtResource("1_4qyqf")
 text = "perform Background Check"
-script = ExtResource("2_r2hfy")
+script = ExtResource("3_gc02w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
@@ -40,7 +40,7 @@ color = Color(0.196078, 0.172549, 0.168627, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="screen_saver" type="Node" parent="."]
-script = ExtResource("4_afn62")
+script = ExtResource("4_yr605")
 
-[connection signal="pressed" from="addCriminalsButton" to="addCriminalsButton" method="_on_pressed"]
-[connection signal="pressed" from="backGroundCheckButton" to="backGroundCheckButton" method="_on_pressed"]
+[connection signal="pressed" from="addCriminalsButton" to="addCriminalsButton" method="_on_pressed" flags=18]
+[connection signal="pressed" from="backGroundCheckButton" to="backGroundCheckButton" method="_on_pressed" flags=18]
